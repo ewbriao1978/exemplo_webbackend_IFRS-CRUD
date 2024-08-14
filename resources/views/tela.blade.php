@@ -10,6 +10,9 @@
 
     <br>
     <a href=" {{ url('/inserir') }}"> Inserir dados </a>
+    <br>
+    <a href=" {{ url('/show') }}"> Apresenta dados </a>
+    
 
 </body>
 </html>

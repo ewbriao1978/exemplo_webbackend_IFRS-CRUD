@@ -54,4 +54,22 @@ class Home extends Controller
         return redirect('/')->with('success','Registro inserido com sucesso');
 
     }
+
+    public function apresentaDados(){
+       $model = new ItensModel();
+       $data['dados'] = $model->all();
+       return view('apresentadados',$data);
+    }
+
+    public function removerDado(Request $request){
+        $model = new ItensModel();
+        $id_for_deleting = $request->id_for_removing;
+        $model->find($id_for_deleting)->delete();
+        return redirect('/show')->with('success','Registro removido com sucesso');
+
+        
+
+
+
+    }
 }
