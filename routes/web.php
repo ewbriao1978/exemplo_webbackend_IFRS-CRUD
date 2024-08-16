@@ -8,3 +8,4 @@ Route::get('/inserir', [Home::class,'inserirDados']);
 Route::post('/salvadados', [Home::class,'salvaDados']);
 Route::get('/show', [Home::class,'apresentaDados']);
 Route::post('remove',[Home::class,'removerDado']);
+Route::get('/edit/{id}',[Home::class,'apresentaFormEdit']);

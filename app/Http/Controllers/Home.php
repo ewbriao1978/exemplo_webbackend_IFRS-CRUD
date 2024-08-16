@@ -31,6 +31,14 @@ class Home extends Controller
         return view('formulario');
     }
 
+    public function apresentaFormEdit($id){
+        //echo "id:".$id;
+        $model = new ItensModel();
+        $data['dados'] = $model->find($id);
+        return view('editar',$data);
+
+    }
+
     public function salvaDados(Request $request){
         $data = array(
             'descricao' => $request->descricao,
@@ -67,9 +75,6 @@ class Home extends Controller
         $model->find($id_for_deleting)->delete();
         return redirect('/show')->with('success','Registro removido com sucesso');
 
-        
-
-
-
+    
     }
 }
