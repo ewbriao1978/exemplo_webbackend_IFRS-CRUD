@@ -15,13 +15,14 @@
 
 <form action="/update" method="post">
     @csrf
+<input type="hidden" name="id_for_updating" value="{{ $dados['id'] }}"> 
 <label>Descrição: </label><br>
 <input type="text" name="descricao" value="{{ $dados['descricao'] }}"><br>
 <label>Quantidade: </label><br>
 <input type="number" name="qtd" value="{{ $dados['quantidade'] }}" ><br>
 <label>Preço: </label><br>
 <input type="number" name="preco" value="{{ $dados['preco'] }}" step="0.01"><br>
-<button type="submit" >Inserir</button>
+<button type="submit" >Editar</button>
 </form>
 
 <br>

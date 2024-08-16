@@ -9,3 +9,4 @@ Route::post('/salvadados', [Home::class,'salvaDados']);
 Route::get('/show', [Home::class,'apresentaDados']);
 Route::post('remove',[Home::class,'removerDado']);
 Route::get('/edit/{id}',[Home::class,'apresentaFormEdit']);
+Route::post('/update',[Home::class,'atualizaDados']);

@@ -39,6 +39,23 @@ class Home extends Controller
 
     }
 
+    public function atualizaDados(Request $request){
+        $data = array(
+            'descricao' => $request->descricao,
+            'quantidade' => $request->qtd,
+            'preco' => $request->preco
+        );
+
+        $model = new ItensModel();
+        
+        
+        $model->find($request->id_for_updating)->update($data);
+        return redirect('/')->with('success_edit','Registro atualizado com sucesso');
+        
+
+
+    }
+
     public function salvaDados(Request $request){
         $data = array(
             'descricao' => $request->descricao,
